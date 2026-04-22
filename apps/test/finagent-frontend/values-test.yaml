@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: your-registry/finagent-frontend
-  tag: test
+  tag: f3062d0
 route:
   hostnames:
     - test.finagent.example.com
