@@ -1,5 +1,5 @@
 name: finagent-frontend
-namespace: finagent-apps-test
+namespace: finagent-apps
 replicaCount: 1
 image:
   repository: ghcr.io/finagent-org/finagent-frontend

@@ -1,4 +1,4 @@
-namespace: finagent-dbs-test
-appsNamespace: finagent-apps-test
+namespace: finagent-dbs
+appsNamespace: finagent-apps
 storage:
   size: 20Gi

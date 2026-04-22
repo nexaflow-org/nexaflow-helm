@@ -1,4 +1,4 @@
 namespaces:
-  apps: finagent-apps-test
-  dbs: finagent-dbs-test
+  apps: finagent-apps
+  dbs: finagent-dbs
   gateway: finagent-gateway-ns

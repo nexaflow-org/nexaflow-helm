@@ -1,6 +1,6 @@
 name: finagent-mysql
-namespace: finagent-dbs-test
-appsNamespace: finagent-apps-test
+namespace: finagent-dbs
+appsNamespace: finagent-apps
 image:
   repository: mysql
   tag: "8.4"
