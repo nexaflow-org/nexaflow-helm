@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: finagent-test-infra-root
+  name: finagent-infra
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
-    repoURL: https://git.example.com/your-org/finagent-gitops.git
-    targetRevision: HEAD
-    path: finagent/env/test/infra
+    repoURL: https://github.com/FinAgent-ORG/finagent-helm.git
+    targetRevision: main
+    path: env/test/infra
     directory:
       recurse: true
   destination:
