@@ -34,21 +34,6 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.name }}-config
                   key: MYSQL_DATABASE_PLACEHOLDER
-          readinessProbe:
-            exec:
-              command: ["sh", "-c", "mysqladmin ping -h 127.0.0.1 -uroot -p$MYSQL_ROOT_PASSWORD"]
-            initialDelaySeconds: 20
-            periodSeconds: 10
-          livenessProbe:
-            exec:
-              command: ["sh", "-c", "mysqladmin ping -h 127.0.0.1 -uroot -p$MYSQL_ROOT_PASSWORD"]
-            initialDelaySeconds: 30
-            periodSeconds: 20
-          startupProbe:
-            exec:
-              command: ["sh", "-c", "mysqladmin ping -h 127.0.0.1 -uroot -p$MYSQL_ROOT_PASSWORD"]
-            failureThreshold: 30
-            periodSeconds: 10
           volumeMounts:
             - name: mysql-data
               mountPath: /var/lib/mysql
