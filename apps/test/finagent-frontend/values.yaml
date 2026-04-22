@@ -2,7 +2,7 @@ name: finagent-frontend
 namespace: finagent-apps-test
 replicaCount: 1
 image:
-  repository: your-registry/finagent-frontend
+  repository: ghcr.io/finagent-org/finagent-frontend
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:
