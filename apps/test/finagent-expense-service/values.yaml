@@ -1,0 +1,49 @@
+name: finagent-expense-service
+namespace: finagent-apps-test
+replicaCount: 1
+image:
+  repository: your-registry/finagent-expense-service
+  tag: latest
+  pullPolicy: IfNotPresent
+serviceAccount:
+  create: true
+service:
+  type: ClusterIP
+  port: 8002
+route:
+  enabled: true
+  gatewayName: finagent-gateway
+  gatewayNamespace: finagent-gateway-ns
+  hostnames:
+    - api-test.example.com
+  pathPrefix: /api/v1/expenses
+config:
+  APP_NAME: finagent-expense-service
+  APP_ENV: test
+  APP_HOST: 0.0.0.0
+  APP_PORT: "8002"
+  MYSQL_HOST: mysql-server.finagent-dbs-test.svc.cluster.local
+  MYSQL_PORT: "3306"
+  MYSQL_DATABASE: finagent_expense
+  MYSQL_ADMIN_HOST: mysql-server.finagent-dbs-test.svc.cluster.local
+  MYSQL_ADMIN_PORT: "3306"
+  MYSQL_ADMIN_DATABASE: mysql
+  JWT_ALGORITHM: HS256
+  ALLOWED_ORIGINS: https://finagent-test.example.com
+  RATE_LIMIT_REQUESTS: "120"
+  RATE_LIMIT_WINDOW_SECONDS: "60"
+secret:
+  MYSQL_USER: finagent_expense_user
+  MYSQL_PASSWORD: change-me-expense-db-password
+  MYSQL_ADMIN_USER: root
+  MYSQL_ADMIN_PASSWORD: change-me-shared-root-password
+  JWT_SECRET_KEY: change-me-expense-jwt-secret
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+initDbJob:
+  enabled: true

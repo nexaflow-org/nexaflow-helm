@@ -1,0 +1,18 @@
+namespace: finagent-apps
+replicaCount: 3
+image:
+  repository: your-registry/finagent-auth-service
+  tag: prod
+config:
+  APP_ENV: production
+  ALLOWED_ORIGINS: https://finagent.example.com
+route:
+  hostnames:
+    - api.finagent.example.com
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi

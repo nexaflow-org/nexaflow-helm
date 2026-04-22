@@ -1,0 +1,6 @@
+apiVersion: v2
+name: finagent-frontend
+description: Helm chart for FinAgent frontend
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

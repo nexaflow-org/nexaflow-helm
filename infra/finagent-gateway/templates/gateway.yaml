@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "finagent-gateway.labels" . | nindent 4 }}
+spec:
+  gatewayClassName: {{ .Values.gatewayClassName }}
+  listeners:
+    - name: {{ .Values.listeners.http.name }}
+      port: {{ .Values.listeners.http.port }}
+      protocol: {{ .Values.listeners.http.protocol }}
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              shared-gateway: {{ index .Values.allowedNamespaceSelector "shared-gateway" | quote }}

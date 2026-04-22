@@ -1,0 +1,6 @@
+apiVersion: v2
+name: finagent-chat-service
+description: Helm chart for FinAgent chat service
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

@@ -1,0 +1,7 @@
+replicaCount: 1
+image:
+  repository: your-registry/finagent-expense-service
+  tag: test
+route:
+  hostnames:
+    - api.test.finagent.example.com

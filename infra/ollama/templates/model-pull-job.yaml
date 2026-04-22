@@ -1,0 +1,25 @@
+{{- if .Values.model.pullEnabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Values.name }}-pull-model
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "ollama.labels" . | nindent 4 }}
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      labels:
+        {{- include "ollama.selectorLabels" . | nindent 8 }}
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: pull-model
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["sh", "-c", "ollama pull {{ .Values.model.name }}"]
+          env:
+            - name: OLLAMA_HOST
+              value: "http://{{ .Values.name }}:{{ .Values.service.port }}"
+{{- end }}

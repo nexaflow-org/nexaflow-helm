@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.name }}-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "finagent-expense-service.labels" . | nindent 4 }}
+data:
+  APP_NAME: {{ .Values.config.APP_NAME | quote }}
+  APP_ENV: {{ .Values.config.APP_ENV | quote }}
+  APP_HOST: {{ .Values.config.APP_HOST | quote }}
+  APP_PORT: {{ .Values.config.APP_PORT | quote }}
+  MYSQL_HOST: {{ .Values.config.MYSQL_HOST | quote }}
+  MYSQL_PORT: {{ .Values.config.MYSQL_PORT | quote }}
+  MYSQL_DATABASE: {{ .Values.config.MYSQL_DATABASE | quote }}
+  MYSQL_ADMIN_HOST: {{ .Values.config.MYSQL_ADMIN_HOST | quote }}
+  MYSQL_ADMIN_PORT: {{ .Values.config.MYSQL_ADMIN_PORT | quote }}
+  MYSQL_ADMIN_DATABASE: {{ .Values.config.MYSQL_ADMIN_DATABASE | quote }}
+  JWT_ALGORITHM: {{ .Values.config.JWT_ALGORITHM | quote }}
+  ALLOWED_ORIGINS: {{ .Values.config.ALLOWED_ORIGINS | quote }}
+  RATE_LIMIT_REQUESTS: {{ .Values.config.RATE_LIMIT_REQUESTS | quote }}
+  RATE_LIMIT_WINDOW_SECONDS: {{ .Values.config.RATE_LIMIT_WINDOW_SECONDS | quote }}

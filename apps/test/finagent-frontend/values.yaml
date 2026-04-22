@@ -1,0 +1,29 @@
+name: finagent-frontend
+namespace: finagent-apps-test
+replicaCount: 1
+image:
+  repository: your-registry/finagent-frontend
+  tag: latest
+  pullPolicy: IfNotPresent
+serviceAccount:
+  create: true
+service:
+  type: ClusterIP
+  port: 8080
+route:
+  enabled: true
+  gatewayName: finagent-gateway
+  gatewayNamespace: finagent-gateway-ns
+  hostnames:
+    - finagent-test.example.com
+  pathPrefix: /
+config:
+  APP_MODE: test
+  API_BASE_HINT: /api
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi

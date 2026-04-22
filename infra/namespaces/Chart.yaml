@@ -1,0 +1,6 @@
+apiVersion: v2
+name: finagent-namespaces
+description: Namespace chart for FinAgent isolation
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

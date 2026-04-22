@@ -1,0 +1,4 @@
+namespaces:
+  apps: finagent-apps-test
+  dbs: finagent-dbs-test
+  gateway: finagent-gateway-ns

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.name }}-config
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "finagent-mysql.labels" . | nindent 4 }}
+data:
+  MYSQL_DATABASE_PLACEHOLDER: {{ .Values.config.MYSQL_DATABASE_PLACEHOLDER | quote }}
+  MYSQL_CHARSET: {{ .Values.config.MYSQL_CHARSET | quote }}
+  MYSQL_COLLATION: {{ .Values.config.MYSQL_COLLATION | quote }}

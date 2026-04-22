@@ -1,0 +1,7 @@
+replicaCount: 1
+image:
+  repository: your-registry/finagent-frontend
+  tag: test
+route:
+  hostnames:
+    - test.finagent.example.com

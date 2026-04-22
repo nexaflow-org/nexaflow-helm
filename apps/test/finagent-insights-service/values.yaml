@@ -1,0 +1,41 @@
+name: finagent-insights-service
+namespace: finagent-apps-test
+replicaCount: 1
+image:
+  repository: your-registry/finagent-insights-service
+  tag: latest
+  pullPolicy: IfNotPresent
+serviceAccount:
+  create: true
+service:
+  type: ClusterIP
+  port: 8003
+route:
+  enabled: true
+  gatewayName: finagent-gateway
+  gatewayNamespace: finagent-gateway-ns
+  hostnames:
+    - api-test.example.com
+  pathPrefix: /api/v1/insights
+config:
+  APP_NAME: finagent-insights-service
+  APP_ENV: test
+  APP_HOST: 0.0.0.0
+  APP_PORT: "8003"
+  EXPENSE_SERVICE_BASE_URL: http://finagent-expense-service-service.finagent-apps-test.svc.cluster.local:8002
+  OLLAMA_BASE_URL: http://ollama.finagent-dbs-test.svc.cluster.local:11434
+  OLLAMA_MODEL: llama3.1
+  OLLAMA_TEMPERATURE: "0"
+  JWT_ALGORITHM: HS256
+  ALLOWED_ORIGINS: https://finagent-test.example.com
+  RATE_LIMIT_REQUESTS: "120"
+  RATE_LIMIT_WINDOW_SECONDS: "60"
+secret:
+  JWT_SECRET_KEY: change-me-shared-jwt-secret
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi

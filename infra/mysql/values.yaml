@@ -1,0 +1,30 @@
+name: finagent-mysql
+namespace: finagent-dbs-test
+appsNamespace: finagent-apps-test
+image:
+  repository: mysql
+  tag: "8.4"
+  pullPolicy: IfNotPresent
+service:
+  port: 3306
+storage:
+  size: 20Gi
+config:
+  MYSQL_DATABASE_PLACEHOLDER: bootstrap
+  MYSQL_CHARSET: utf8mb4
+  MYSQL_COLLATION: utf8mb4_unicode_ci
+secret:
+  MYSQL_ROOT_PASSWORD: change-me-shared-root-password
+  AUTH_MYSQL_DATABASE: finagent_auth
+  AUTH_MYSQL_USER: finagent_auth_user
+  AUTH_MYSQL_PASSWORD: change-me-auth-db-password
+  EXPENSE_MYSQL_DATABASE: finagent_expense
+  EXPENSE_MYSQL_USER: finagent_expense_user
+  EXPENSE_MYSQL_PASSWORD: change-me-expense-db-password
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi

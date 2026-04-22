@@ -1,0 +1,6 @@
+apiVersion: v2
+name: finagent-gateway
+description: Gateway chart for FinAgent shared ingress
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

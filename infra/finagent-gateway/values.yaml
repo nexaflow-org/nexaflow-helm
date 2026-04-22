@@ -1,0 +1,12 @@
+name: finagent-gateway
+namespace: finagent-gateway-ns
+gatewayClassName: kgateway
+listeners:
+  http:
+    name: http
+    port: 80
+    protocol: HTTP
+allowedNamespaceSelector:
+  shared-gateway: "true"
+service:
+  enabled: false

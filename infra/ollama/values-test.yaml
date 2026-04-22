@@ -1,0 +1,4 @@
+namespace: finagent-dbs-test
+model:
+  pullEnabled: true
+  name: llama3.1

@@ -1,0 +1,20 @@
+name: ollama
+namespace: finagent-dbs-test
+image:
+  repository: ollama/ollama
+  tag: "0.6.5"
+  pullPolicy: IfNotPresent
+service:
+  port: 11434
+storage:
+  size: 30Gi
+model:
+  pullEnabled: true
+  name: llama3.1
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    cpu: "2"
+    memory: 4Gi
