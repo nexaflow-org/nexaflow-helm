@@ -20,6 +20,15 @@ route:
 config:
   APP_MODE: test
   API_BASE_HINT: /api
+nginx:
+  authServiceHost: finagent-auth-service-service.finagent-apps.svc.cluster.local
+  authServicePort: 8001
+  expenseServiceHost: finagent-expense-service-service.finagent-apps.svc.cluster.local
+  expenseServicePort: 8002
+  insightsServiceHost: finagent-insights-service-service.finagent-apps.svc.cluster.local
+  insightsServicePort: 8003
+  chatServiceHost: finagent-chat-service-service.finagent-apps.svc.cluster.local
+  chatServicePort: 8004
 resources:
   requests:
     cpu: 50m
