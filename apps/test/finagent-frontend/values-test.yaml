@@ -6,8 +6,3 @@ image:
 route:
   hostnames:
     - test.finagent.example.com
-nginx:
-  authServiceHost: auth-service.finagent-apps.svc.cluster.local
-  expenseServiceHost: expense-service.finagent-apps.svc.cluster.local
-  insightsServiceHost: insights-service.finagent-apps.svc.cluster.local
-  chatServiceHost: chat-service.finagent-apps.svc.cluster.local
