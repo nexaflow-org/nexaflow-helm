@@ -1,4 +1,4 @@
-namespace: finagent-apps
+namespace: finagent-apps-test
 replicaCount: 1
 image:
   repository: ghcr.io/finagent-org/finagent-frontend
@@ -7,7 +7,7 @@ route:
   hostnames:
     - test.finagent.example.com
 nginx:
-  authServiceHost: finagent-auth-service-service.finagent-apps-test.svc.cluster.local
-  expenseServiceHost: finagent-expense-service-service.finagent-apps-test.svc.cluster.local
-  insightsServiceHost: finagent-insights-service-service.finagent-apps-test.svc.cluster.local
-  chatServiceHost: finagent-chat-service-service.finagent-apps-test.svc.cluster.local
+  authServiceHost: auth-service.finagent-apps-test.svc.cluster.local
+  expenseServiceHost: expense-service.finagent-apps-test.svc.cluster.local
+  insightsServiceHost: insights-service.finagent-apps-test.svc.cluster.local
+  chatServiceHost: chat-service.finagent-apps-test.svc.cluster.local

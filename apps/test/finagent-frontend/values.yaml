@@ -8,6 +8,7 @@ image:
 serviceAccount:
   create: true
 service:
+  name: frontend-service
   type: ClusterIP
   port: 8080
 route:
@@ -15,19 +16,19 @@ route:
   gatewayName: finagent-gateway
   gatewayNamespace: finagent-gateway-ns
   hostnames:
-    - finagent-test.example.com
+    - finagent.example.com
   pathPrefix: /
 config:
   APP_MODE: test
   API_BASE_HINT: /api
 nginx:
-  authServiceHost: finagent-auth-service-service.finagent-apps.svc.cluster.local
+  authServiceHost: auth-service.finagent-apps.svc.cluster.local
   authServicePort: 8001
-  expenseServiceHost: finagent-expense-service-service.finagent-apps.svc.cluster.local
+  expenseServiceHost: expense-service.finagent-apps.svc.cluster.local
   expenseServicePort: 8002
-  insightsServiceHost: finagent-insights-service-service.finagent-apps.svc.cluster.local
+  insightsServiceHost: insights-service.finagent-apps.svc.cluster.local
   insightsServicePort: 8003
-  chatServiceHost: finagent-chat-service-service.finagent-apps.svc.cluster.local
+  chatServiceHost: chat-service.finagent-apps.svc.cluster.local
   chatServicePort: 8004
 resources:
   requests:

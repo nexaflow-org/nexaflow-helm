@@ -21,6 +21,6 @@ spec:
             type: PathPrefix
             value: {{ .Values.route.pathPrefix }}
       backendRefs:
-        - name: {{ .Values.name }}-service
+        - name: {{ .Values.service.name }}
           port: {{ .Values.service.port }}
 {{- end }}

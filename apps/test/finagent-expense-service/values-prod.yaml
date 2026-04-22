@@ -5,6 +5,8 @@ image:
   tag: prod
 config:
   APP_ENV: production
+  MYSQL_HOST: mysql-server.finagent-dbs.svc.cluster.local
+  MYSQL_ADMIN_HOST: mysql-server.finagent-dbs.svc.cluster.local
   ALLOWED_ORIGINS: https://finagent.example.com
 route:
   hostnames:
