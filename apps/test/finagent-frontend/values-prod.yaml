@@ -5,6 +5,7 @@ image:
   tag: prod
 config:
   APP_MODE: production
+  SESSION_COOKIE_SECURE: "true"
 route:
   hostnames:
     - finagent.example.com

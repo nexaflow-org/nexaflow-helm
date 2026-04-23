@@ -20,21 +20,12 @@ route:
   pathPrefix: /
 config:
   APP_MODE: test
-nginx:
-  resolver: kube-dns.kube-system.svc.cluster.local
-  upstreams:
-    auth:
-      host: auth-service.finagent-apps.svc.cluster.local
-      port: 8001
-    expense:
-      host: expense-service.finagent-apps.svc.cluster.local
-      port: 8002
-    insights:
-      host: insights-service.finagent-apps.svc.cluster.local
-      port: 8003
-    chat:
-      host: chat-service.finagent-apps.svc.cluster.local
-      port: 8004
+  PORT: "8080"
+  SESSION_COOKIE_SECURE: "false"
+  AUTH_SERVICE_URL: http://auth-service.finagent-apps.svc.cluster.local:8001
+  EXPENSE_SERVICE_URL: http://expense-service.finagent-apps.svc.cluster.local:8002
+  INSIGHTS_SERVICE_URL: http://insights-service.finagent-apps.svc.cluster.local:8003
+  CHAT_SERVICE_URL: http://chat-service.finagent-apps.svc.cluster.local:8004
 resources:
   requests:
     cpu: 50m
