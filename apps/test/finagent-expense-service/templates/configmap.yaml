@@ -20,6 +20,9 @@ data:
   MYSQL_ADMIN_HOST: {{ .Values.config.MYSQL_ADMIN_HOST | quote }}
   MYSQL_ADMIN_PORT: {{ .Values.config.MYSQL_ADMIN_PORT | quote }}
   MYSQL_ADMIN_DATABASE: {{ .Values.config.MYSQL_ADMIN_DATABASE | quote }}
+  OLLAMA_BASE_URL: {{ .Values.config.OLLAMA_BASE_URL | quote }}
+  OLLAMA_MODEL: {{ .Values.config.OLLAMA_MODEL | quote }}
+  OLLAMA_VISION_MODEL: {{ .Values.config.OLLAMA_VISION_MODEL | quote }}
   JWT_ALGORITHM: {{ .Values.config.JWT_ALGORITHM | quote }}
   ALLOWED_ORIGINS: {{ .Values.config.ALLOWED_ORIGINS | quote }}
   RATE_LIMIT_REQUESTS: {{ .Values.config.RATE_LIMIT_REQUESTS | quote }}

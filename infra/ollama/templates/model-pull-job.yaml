@@ -1,4 +1,5 @@
 {{- if .Values.model.pullEnabled }}
+{{- $models := .Values.model.names | default (list .Values.model.name) }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -18,7 +19,13 @@ spec:
         - name: pull-model
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["sh", "-c", "ollama pull {{ .Values.model.name }}"]
+          command:
+            - "sh"
+            - "-c"
+            - |
+              for model in {{ join " " $models }}; do
+                ollama pull "$model";
+              done
           env:
             - name: OLLAMA_HOST
               value: "http://{{ .Values.name }}:{{ .Values.service.port }}"

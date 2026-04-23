@@ -5,6 +5,9 @@ storage:
 model:
   pullEnabled: true
   name: llama3.1
+  names:
+    - llama3.1
+    - llava
 resources:
   requests:
     cpu: "1"
