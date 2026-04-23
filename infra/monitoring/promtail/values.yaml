@@ -34,6 +34,11 @@ promtail:
           - action: replace
             source_labels: [__meta_kubernetes_pod_container_name]
             regex: (.+)
+            target_label: app
+
+          - action: replace
+            source_labels: [__meta_kubernetes_pod_container_name]
+            regex: (.+)
             target_label: service
 
           - action: replace
