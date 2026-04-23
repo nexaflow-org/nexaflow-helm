@@ -12,9 +12,9 @@ storage:
   size: 30Gi
 model:
   pullEnabled: true
-  name: llama3.2:1b
+  name: tinyllama
   names:
-    - llama3.2:1b
+    - tinyllama
 resources:
   requests:
     cpu: 500m

@@ -23,6 +23,10 @@ spec:
             - "sh"
             - "-c"
             - |
+              until ollama list >/dev/null 2>&1; do
+                echo "waiting for ollama service to become ready..."
+                sleep 5
+              done
               for model in {{ join " " $models }}; do
                 ollama pull "$model";
               done

@@ -23,6 +23,12 @@ spec:
           ports:
             - containerPort: 11434
               name: http
+          startupProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 30
           readinessProbe:
             tcpSocket:
               port: http
