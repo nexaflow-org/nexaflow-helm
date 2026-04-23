@@ -1,6 +1,6 @@
 namespace: finagent-dbs
 storage:
-  className: finagent-nfs-test
+  className: finagent-nfs
 model:
   pullEnabled: true
   name: llama3.2:1b
