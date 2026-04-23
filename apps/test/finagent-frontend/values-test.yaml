@@ -4,4 +4,5 @@ image:
   repository: ghcr.io/finagent-org/finagent-frontend
   tag: da2cce5
 route:
-  hostnames: []
+  hostnames:
+  - myfinagent.online
