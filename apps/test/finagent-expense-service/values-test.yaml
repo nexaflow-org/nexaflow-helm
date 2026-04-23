@@ -2,7 +2,7 @@ namespace: finagent-apps
 replicaCount: 1
 image:
   repository: your-registry/finagent-expense-service
-  tag: test
+  tag: 32fac7f
 config:
   MYSQL_HOST: mysql-server.finagent-dbs.svc.cluster.local
   MYSQL_ADMIN_HOST: mysql-server.finagent-dbs.svc.cluster.local
