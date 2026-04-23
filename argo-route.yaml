@@ -3,20 +3,17 @@ kind: HTTPRoute
 metadata:
   name: argo-route
   namespace: argocd
-spec: 
+spec:
   parentRefs:
-  - name: finagent-gateway
-    namespace: finagent-gateway-ns
+    - name: finagent-gateway
+      namespace: finagent-gateway-ns
   hostnames:
-  - argocd.myfinagent.online
-  rules: 
-  - matches:
-    - path: 
-        type: PathPrefix 
-        value: /
-    
-    backendRefs:
-    - name: argocd-server
-      namespace: argocd
-      port: 80
-          
+    - "argocd.myfinagent.online"
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: argocd-server
+          port: 80
