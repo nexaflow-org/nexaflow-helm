@@ -9,7 +9,7 @@ spec:
     namespace: finagent-gateway-ns
   hostnames:
   - argocd.myfinagent.online
-  rule: 
+  rules: 
   - matches:
     - path: 
         type: PathPrefix 
