@@ -41,7 +41,7 @@ secret:
   MYSQL_PASSWORD: change-me-expense-db-password
   MYSQL_ADMIN_USER: root
   MYSQL_ADMIN_PASSWORD: change-me-shared-root-password
-  JWT_SECRET_KEY: change-me-expense-jwt-secret
+  JWT_SECRET_KEY: change-me-shared-jwt-secret
 resources:
   requests:
     cpu: 100m
