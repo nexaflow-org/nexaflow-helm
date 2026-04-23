@@ -2,7 +2,7 @@ name: finagent-auth-service
 namespace: finagent-apps
 replicaCount: 1
 image:
-  repository: your-registry/finagent-auth-service
+  repository: ghcr.io/finagent-org/finagent-auth
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:
