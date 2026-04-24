@@ -12,13 +12,20 @@ storage:
   size: 30Gi
 model:
   pullEnabled: true
-  name: tinyllama
+  name: llama3.2:3b
   names:
-    - tinyllama
+    - llama3.2:3b
 resources:
   requests:
-    cpu: 500m
-    memory: 1Gi
-  limits:
     cpu: "2"
     memory: 4Gi
+  limits:
+    cpu: "6"
+    memory: 10Gi
+nodeSelector:
+  kubernetes.io/hostname: ip-10-0-0-190
+tolerations:
+  - key: ollama
+    operator: Equal
+    value: "true"
+    effect: NoExecute

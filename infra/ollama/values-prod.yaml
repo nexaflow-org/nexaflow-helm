@@ -4,13 +4,13 @@ storage:
   size: 100Gi
 model:
   pullEnabled: true
-  name: tinyllama
+  name: llama3.2:3b
   names:
-    - tinyllama
+    - llama3.2:3b
 resources:
   requests:
-    cpu: "1"
-    memory: 2Gi
+    cpu: "2"
+    memory: 4Gi
   limits:
-    cpu: "4"
-    memory: 8Gi
+    cpu: "6"
+    memory: 10Gi
