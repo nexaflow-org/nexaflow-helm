@@ -30,7 +30,38 @@ keycloak:
 
   replicaCount: 1
 
-  resourcesPreset: small
+  resourcesPreset: none
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1024Mi
+    limits:
+      cpu: 1000m
+      memory: 1536Mi
+
+  startupProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 30
+    successThreshold: 1
+
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 180
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 6
+    successThreshold: 1
+
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 60
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 6
+    successThreshold: 1
 
   extraEnvVars:
     - name: KC_HOSTNAME
