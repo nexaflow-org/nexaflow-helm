@@ -18,7 +18,7 @@ spec:
         - values-test.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: finagent-apps
+    namespace: keycloak
   syncPolicy:
     automated:
       prune: true
