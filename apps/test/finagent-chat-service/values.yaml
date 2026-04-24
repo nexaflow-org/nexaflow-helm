@@ -31,8 +31,6 @@ config:
   ALLOWED_ORIGINS: https://finagent.example.com
   RATE_LIMIT_REQUESTS: "120"
   RATE_LIMIT_WINDOW_SECONDS: "60"
-secret:
-  JWT_SECRET_KEY: change-me-shared-jwt-secret
 resources:
   requests:
     cpu: 100m
