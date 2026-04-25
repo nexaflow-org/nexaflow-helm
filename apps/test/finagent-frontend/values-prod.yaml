@@ -1,4 +1,4 @@
-namespace: finagent-apps
+namespace: finagent-apps-prod
 replicaCount: 2
 image:
   repository: ghcr.io/finagent-org/finagent-frontend
@@ -6,6 +6,10 @@ image:
 config:
   APP_MODE: production
   SESSION_COOKIE_SECURE: "true"
+  AUTH_SERVICE_URL: http://auth-service.finagent-apps-prod.svc.cluster.local:8001
+  EXPENSE_SERVICE_URL: http://expense-service.finagent-apps-prod.svc.cluster.local:8002
+  INSIGHTS_SERVICE_URL: http://insights-service.finagent-apps-prod.svc.cluster.local:8003
+  CHAT_SERVICE_URL: http://chat-service.finagent-apps-prod.svc.cluster.local:8004
 route:
   hostnames:
     - finagent.example.com

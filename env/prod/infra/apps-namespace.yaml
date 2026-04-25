@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: finagent-apps-prod
+  labels:
+    app.kubernetes.io/part-of: finagent
+    finagent.io/scope: apps
+    finagent.io/environment: prod
+    shared-gateway: "true"
