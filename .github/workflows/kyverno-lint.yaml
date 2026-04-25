@@ -10,7 +10,7 @@ on:
 
 jobs:
   kyverno-lint:
-    if: github.head_ref == 'codex/prod'
+    if: github.head_ref == 'env/prod'
     runs-on: ubuntu-latest
 
     steps:
