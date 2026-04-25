@@ -2,12 +2,15 @@ name: Kyverno Lint
 
 on:
   pull_request:
+    branches:
+      - main
     types:
       - opened
       - synchronize
 
 jobs:
   kyverno-lint:
+    if: github.head_ref == 'codex/prod'
     runs-on: ubuntu-latest
 
     steps:
