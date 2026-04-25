@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-workload-labels
+spec:
+  validationFailureAction: Enforce
+  background: false
+  rules:
+    - name: require-standard-workload-labels
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+                - StatefulSet
+      validate:
+        message: Workloads must include app.kubernetes.io/name and app.kubernetes.io/part-of labels.
+        pattern:
+          metadata:
+            labels:
+              app.kubernetes.io/name: "?*"
+              app.kubernetes.io/part-of: "?*"

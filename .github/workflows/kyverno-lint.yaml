@@ -1,0 +1,33 @@
+name: Kyverno Lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  kyverno-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        run: curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+      - name: Install Kyverno CLI
+        run: |
+          set -euo pipefail
+          KYVERNO_VERSION="$(curl -s https://api.github.com/repos/kyverno/kyverno/releases/latest | jq -r '.tag_name')"
+          curl -LO "https://github.com/kyverno/kyverno/releases/download/${KYVERNO_VERSION}/kyverno-cli_${KYVERNO_VERSION#v}_linux_x86_64.tar.gz"
+          tar -xzf "kyverno-cli_${KYVERNO_VERSION#v}_linux_x86_64.tar.gz" kyverno
+          sudo install -m 0755 kyverno /usr/local/bin/kyverno
+          kyverno version
+
+      - name: Render manifests for policy checks
+        run: bash .github/scripts/render-kyverno-targets.sh
+
+      - name: Run Kyverno policy checks
+        run: kyverno apply .github/kyverno-policies --resource .tmp/kyverno-rendered
