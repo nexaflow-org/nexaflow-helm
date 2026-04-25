@@ -19,6 +19,10 @@ spec:
     spec:
       restartPolicy: OnFailure
       serviceAccountName: {{ .Values.name }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: init-db
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

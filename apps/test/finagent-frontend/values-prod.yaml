@@ -1,5 +1,7 @@
 namespace: finagent-apps-prod
 replicaCount: 2
+nodeSelector:
+  finagent.io/demo-pending: "true"
 image:
   repository: ghcr.io/finagent-org/finagent-frontend
   tag: "5807966"

@@ -20,6 +20,10 @@ spec:
         {{- include "finagent-expense-service.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ .Values.name }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: expense-service
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

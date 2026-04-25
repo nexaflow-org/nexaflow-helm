@@ -1,5 +1,7 @@
 namespace: finagent-apps-prod
 replicaCount: 3
+nodeSelector:
+  finagent.io/demo-pending: "true"
 image:
   repository: ghcr.io/finagent-org/finagent-auth
   tag: "d5b8121"
