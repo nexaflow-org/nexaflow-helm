@@ -12,7 +12,7 @@ spec:
   - name: finagent-gateway
     namespace: finagent-gateway-ns
   hostnames:
-  - k8s.myfinagent.online
+  - k8s.nexaflow.site
   rules:
   - matches:
     - path:

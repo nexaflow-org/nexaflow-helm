@@ -434,11 +434,11 @@ Headlamp RBAC definitions in [`infra/headlamp/rbac.yaml`](./infra/headlamp/rbac.
 
 | Domain | Purpose | Source |
 |---|---|---|
-| `myfinagent.online` | Frontend UI | [`apps/test/finagent-frontend/values-test.yaml`](./apps/test/finagent-frontend/values-test.yaml) |
-| `argocd.myfinagent.online` | Argo CD | [`argo-route.yaml`](./argo-route.yaml) |
-| `keycloak.myfinagent.online` | Keycloak | [`env/test/infra/keycloak-route.yaml`](./env/test/infra/keycloak-route.yaml) |
-| `k8s.myfinagent.online` | Headlamp | [`infra/headlamp/headlamp-route.yaml`](./infra/headlamp/headlamp-route.yaml) |
-| `grafana.myfinagent.online` | Grafana | [`infra/monitoring/prometheus/values.yaml`](./infra/monitoring/prometheus/values.yaml) |
+| `nexaflow.site` | Frontend UI | [`apps/test/finagent-frontend/values-test.yaml`](./apps/test/finagent-frontend/values-test.yaml) |
+| `argocd.nexaflow.site` | Argo CD | [`argo-route.yaml`](./argo-route.yaml) |
+| `keycloak.nexaflow.site` | Keycloak | [`env/test/infra/keycloak-route.yaml`](./env/test/infra/keycloak-route.yaml) |
+| `k8s.nexaflow.site` | Headlamp | [`infra/headlamp/headlamp-route.yaml`](./infra/headlamp/headlamp-route.yaml) |
+| `grafana.nexaflow.site` | Grafana | [`infra/monitoring/prometheus/values.yaml`](./infra/monitoring/prometheus/values.yaml) |
 
 ### 15.2 Application UI
 
@@ -516,11 +516,11 @@ Evidence:
 ### 16.6 External Domain Checks
 
 ```bash
-curl -I https://myfinagent.online
-curl -I https://argocd.myfinagent.online
-curl -I https://keycloak.myfinagent.online
-curl -I https://k8s.myfinagent.online
-curl -I https://grafana.myfinagent.online
+curl -I https://nexaflow.site
+curl -I https://argocd.nexaflow.site
+curl -I https://keycloak.nexaflow.site
+curl -I https://k8s.nexaflow.site
+curl -I https://grafana.nexaflow.site
 ```
 
 ### 16.7 Internal Connectivity Checks

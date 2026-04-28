@@ -12,7 +12,7 @@ spec:
     - name: finagent-gateway
       namespace: finagent-gateway-ns
   hostnames:
-    - "keycloak.myfinagent.online"
+    - "keycloak.nexaflow.site"
   rules:
     - matches:
         - path:

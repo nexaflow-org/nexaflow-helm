@@ -63,7 +63,7 @@ httpRoute:
     name: finagent-gateway
     namespace: finagent-gateway-ns
 
-  hostname: grafana.myfinagent.online
+  hostname: grafana.nexaflow.site
 
   path:
     type: PathPrefix
