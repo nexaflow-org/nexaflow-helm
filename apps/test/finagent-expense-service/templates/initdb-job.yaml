@@ -29,6 +29,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["python", "app/init_db.py"]
+          env:
+            - name: USER
+              value: appuser
+            - name: LOGNAME
+              value: appuser
           envFrom:
             - configMapRef:
                 name: {{ .Values.name }}-config
