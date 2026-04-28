@@ -3,6 +3,6 @@ replicaCount: 1
 config:
   oidc:
     enabled: true
-    issuerURL: https://keycloak.myfinagent.online/realms/finagent
+    issuerURL: https://keycloak.nexaflow.site/realms/finagent
     clientID: headlamp
     scopes: "openid profile email"

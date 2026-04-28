@@ -8,7 +8,7 @@ spec:
     - name: finagent-gateway
       namespace: finagent-gateway-ns
   hostnames:
-    - "argocd.myfinagent.online"
+    - "argocd.nexaflow.site"
   rules:
     - matches:
         - path:
