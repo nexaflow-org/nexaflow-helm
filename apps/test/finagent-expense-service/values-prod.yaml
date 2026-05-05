@@ -4,7 +4,7 @@ nodeSelector:
   finagent.io/demo-pending: "true"
 image:
   repository: ghcr.io/finagent-org/finagent-expense
-  tag: 985a131
+  tag: 044157e
 config:
   APP_ENV: production
   MYSQL_HOST: mysql-server.finagent-dbs.svc.cluster.local
