@@ -2,7 +2,7 @@ name: finagent-chat-service
 namespace: finagent-apps
 replicaCount: 1
 image:
-  repository: ghcr.io/finagent-org/finagent-chat
+  repository: ghcr.io/nexaflow-org/nexaflow-chat
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:

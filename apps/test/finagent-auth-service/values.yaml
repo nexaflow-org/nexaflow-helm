@@ -2,7 +2,7 @@ name: finagent-auth-service
 namespace: finagent-apps
 replicaCount: 1
 image:
-  repository: ghcr.io/finagent-org/finagent-auth
+  repository: ghcr.io/nexaflow-org/nexaflow-auth
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:

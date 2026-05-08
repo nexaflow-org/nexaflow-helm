@@ -3,7 +3,7 @@ replicaCount: 3
 nodeSelector:
   finagent.io/demo-pending: "true"
 image:
-  repository: ghcr.io/finagent-org/finagent-expense
+  repository: ghcr.io/nexaflow-org/nexaflow-expense
   tag: 985a131
 config:
   APP_ENV: production

@@ -3,7 +3,7 @@ replicaCount: 3
 nodeSelector:
   finagent.io/demo-pending: "true"
 image:
-  repository: ghcr.io/finagent-org/finagent-auth
+  repository: ghcr.io/nexaflow-org/nexaflow-auth
   tag: "d5b8121"
 config:
   APP_ENV: production
