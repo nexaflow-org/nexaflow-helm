@@ -3,7 +3,7 @@ replicaCount: 2
 nodeSelector:
   finagent.io/demo-pending: "true"
 image:
-  repository: ghcr.io/finagent-org/finagent-chat
+  repository: ghcr.io/nexaflow-org/nexaflow-chat
   tag: e3c7fe8
 config:
   APP_ENV: production

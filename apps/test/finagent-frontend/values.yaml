@@ -2,7 +2,7 @@ name: finagent-frontend
 namespace: finagent-apps
 replicaCount: 1
 image:
-  repository: ghcr.io/finagent-org/finagent-frontend
+  repository: ghcr.io/nexaflow-org/nexaflow-frontend
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:
