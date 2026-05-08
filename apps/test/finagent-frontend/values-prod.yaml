@@ -3,7 +3,7 @@ replicaCount: 2
 nodeSelector:
   finagent.io/demo-pending: "true"
 image:
-  repository: ghcr.io/finagent-org/finagent-frontend
+  repository: ghcr.io/nexaflow-org/nexaflow-frontend
   tag: "5807966"
 config:
   APP_MODE: production

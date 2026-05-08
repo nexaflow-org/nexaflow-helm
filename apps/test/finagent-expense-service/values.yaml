@@ -2,7 +2,7 @@ name: finagent-expense-service
 namespace: finagent-apps
 replicaCount: 1
 image:
-  repository: ghcr.io/finagent-org/finagent-expense
+  repository: ghcr.io/nexaflow-org/nexaflow-expense
   tag: latest
   pullPolicy: IfNotPresent
 serviceAccount:

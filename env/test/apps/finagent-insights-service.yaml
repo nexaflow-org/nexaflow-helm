@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/FinAgent-ORG/finagent-helm.git
+    repoURL: https://github.com/nexaflow-org/nexaflow-helm.git
     targetRevision: main
     path: apps/test/finagent-insights-service
     helm:
